@@ -4,18 +4,18 @@ namespace Hcode;
 
 use Rain\Tpl;
 
-class page{
+class Page{
 	
 	private $tpl;
 	private $options;
 	private $defaults = ["data"=>[]];
 
-	public function __construct($opts = array())	{
+	public function __construct($opts = array(), $tpl_dir = "/views/")	{
 	
 		$this->options = array_merge($this->defaults, $opts);
 
 		$config = array(
-						"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/ecommerce/views/",
+						"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/ecommerce/".$tpl_dir,
 						"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/ecommerce/views-cache/",
 						"debug"         => false
 					   );
